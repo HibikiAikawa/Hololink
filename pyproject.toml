@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "hololink"
+version = "0.1.0"
+description = "hololink"
+authors = ["HibikiAikawa <hibikingxfin@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+youtube-transcript-api = "^0.6.1"
+notebook = "^7.0.2"
+flask = "^2.3.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
