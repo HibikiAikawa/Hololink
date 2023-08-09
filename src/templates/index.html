@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ディクテーションアプリ</title>
+</head>
+<body>
+    <button id="startButton">開始</button>
+    <div id="videoContainer"></div>
+    <input type="text" id="dictationInput" placeholder="テキストを入力してください">
+    <button onclick="checkInput()">確認</button>
+    <p id="result"></p>
+
+    <script>
+        function checkInput() {
+            const inputText = document.getElementById('dictationInput').value;
+
+            fetch('/check', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({inputText: inputText})
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerText = data.result;
+            });
+        }
+    </script>
+    <script>
+        document.getElementById('startButton').addEventListener('click', function() {
+            const embedCode = '<iframe width="560" height="315" src="https://www.youtube.com/embed/gg3SrFzHn9M?start=292" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+            document.getElementById('videoContainer').innerHTML = embedCode;
+        });
+    </script>
+
+</body>
+</html>
