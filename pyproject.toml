@@ -10,6 +10,7 @@ python = "^3.8"
 youtube-transcript-api = "^0.6.1"
 notebook = "^7.0.2"
 flask = "^2.3.2"
+django = "^4.2.4"
 
 
 [build-system]
