@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Hololink</title>
+</head>
+<body>
+    <h1>聞こえた英文を記述してください</h1>
+    <iframe width="560" height="315" src={{question.youtube_base_url}}?start={{question.start_time}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <form action="post">
+        <textarea name="sentence" id="" cols="30" rows="10"></textarea>
+        <br>
+        <button>submit</button>
+    </form>
+</body>
+</html>
